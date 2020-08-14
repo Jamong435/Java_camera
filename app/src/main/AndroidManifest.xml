@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kim9212.ex71camera">
+
+    <!--    외부저장소 읽고쓰기에 대한 퍼미션<-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--내앱에서 만든 uri를 다른 앱에 공개하고자 할때-->
+        <!--android:authorities: 자바에서 사용할 식별자-->
+        <!--        name:provider클래스 명지정-->
+        <!--        android:grantUriPermissions="true" uri제공의 대한 임시 퍼미션-->
+        <!--        exported:이앱말고 다른앱에서는 이 프로보이더를 사용금지-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.kim9212.ex71camera.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- 프로바이더가 공개할 경로 명단 xml등록-->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+
+
+        </provider>
+
+    </application>
+
+</manifest>

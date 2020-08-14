@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--    내부메모리 영역 uri  공개-->
+    <!--    path=".": 모든경로-->
+    <files-path
+        name="files"
+        path="." />
+    <!--    . 은 모두다 공개하겠다고 하는것 대부분은 이거  -->
+    <!--외부 메모리영역의 파일uri공개-->
+    <!--    Enviroment.getExternalstroagedirectiroty경로-->
+    <files-path
+        name="external"
+        path="." />
+
+    <!--    외부메모리중에서도 앱 고유영역 uri 공개-->
+<!--    getExternalfiledir()경로-->
+    <external-files-path
+        name="external_file"
+        path="."/>
+
+</paths>
